@@ -1,4 +1,4 @@
-import { Component, OnInit,Output, Input,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +6,6 @@ import { Component, OnInit,Output, Input,EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  Count:string='0';
- 
+  // tslint:disable-next-line:no-inferrable-types
+  Count: string = '0';
 }
