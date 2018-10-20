@@ -1,0 +1,23 @@
+main
+{
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    background-image: url('../assets/tex2res4_@2X.png');
+    color: white;
+        /*========================================================
+ This pattern is downloaded from www.subtlepatterns.com 
+ If you need more, that's where to get'em.
+ ========================================================*/
+
+}
+#container{
+    padding-top: 30px;
+    margin: auto;
+    width: 315px;
+}
+#title{
+    margin:auto;
+    display: block;
+    text-align: center;
+}

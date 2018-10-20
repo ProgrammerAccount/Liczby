@@ -23,7 +23,7 @@ export class BinComponent implements OnInit , DoCheck {
     this.globalChange = false;
   }
 
-  ValidateNumber(numberString: string): boolean{
+  ValidateNumber(numberString: string): boolean {
     const reg =  /^[0-1]*\.?[0-1]*$/;
     return reg.test(numberString);
   }

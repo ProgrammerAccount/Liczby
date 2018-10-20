@@ -7,5 +7,5 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
   // tslint:disable-next-line:no-inferrable-types
-  Count: string = '0';
+  Count: string = '';
 }

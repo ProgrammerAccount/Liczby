@@ -18,7 +18,7 @@ export class OtcComponent implements OnInit, DoCheck {
     this.Value = this.BinToOct(this.Count);
     }
   }
-  ValidateNumber(numberString: string): boolean{
+  ValidateNumber(numberString: string): boolean {
     const reg =  /^[-+]?[0-7]*\.?[0-7]*$/;
     return reg.test(numberString);
   }
