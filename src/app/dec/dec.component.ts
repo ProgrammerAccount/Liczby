@@ -32,19 +32,18 @@ export class DecComponent implements OnInit, DoCheck {
     return reg.test(numberString);
   }
   BinToDec(Bin: string): number {
-
     let Dec = 0;
+    if (Bin !== undefined) {
     for (let i = 0; i < Bin.length ; i++) {
       if (Bin.charAt(i) === '1') { Dec += Math.pow(2, (Bin.length - 1) - i); }
     }
+  }
       return Dec;
   }
   DecToBin(Dec: number): string {
-    console.log(Dec);
 
     let Bin = '';
     while (Dec >= 1) {
-      console.log(Dec % 2);
       Bin = (Math.floor(Dec % 2)).toString() + Bin;
       Dec = Dec / 2;
     }

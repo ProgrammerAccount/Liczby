@@ -34,6 +34,8 @@ export class OtcComponent implements OnInit, DoCheck {
   BinToOct(Bin: string): string {
     let Oct = '';
     let BinValue;
+    if (Bin !== undefined) {
+
     while (Bin.length % 3 !== 0) {
     Bin = '0' + Bin;
     }
@@ -50,7 +52,13 @@ export class OtcComponent implements OnInit, DoCheck {
         case '111': Oct += '7'; break;
       }
     }
-
+    if (Oct.length > 1) {
+      while (Oct.charAt(0) === '0') {
+        Oct = Oct.substring(1, Oct.length);
+        if (Oct.length === 1) { break; }
+      }
+      }
+  }
     return Oct;
   }
 
@@ -69,6 +77,12 @@ export class OtcComponent implements OnInit, DoCheck {
         case '5': Bin += '101'; break;
         case '6': Bin += '110'; break;
         case '7': Bin += '111'; break;
+      }
+    }
+    if (Bin.length > 1) {
+      while (Bin.charAt(0) == '0') {
+        Bin = Bin.substring(1, Bin.length);
+        if (Bin.length === 1) { break; }
       }
     }
 

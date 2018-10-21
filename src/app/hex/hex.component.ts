@@ -34,6 +34,7 @@ export class HexComponent implements DoCheck, OnInit {
   BinToHex(Bin: string): string {
     let Hex = '';
     let BinValue;
+    if (Bin !== undefined) {
     while (Bin.length % 4 !== 0) {
     Bin = '0' + Bin;
     }
@@ -58,7 +59,14 @@ export class HexComponent implements DoCheck, OnInit {
         case '1111': Hex += 'F'; break;
       }
     }
+    if (Hex.length > 1) {
+      while (Hex.charAt(0) === '0') {
+        Hex = Hex.substring(1, Hex.length);
+        if (Hex.length === 1) { break; }
+      }
+      }
 
+  }
     return Hex;
   }
 
@@ -86,7 +94,12 @@ export class HexComponent implements DoCheck, OnInit {
         case 'F': Bin += '1111'; break;
       }
     }
-
+    if (Bin.length > 1) {
+      while (Bin.charAt(0) == '0') {
+        Bin = Bin.substring(1, Bin.length);
+        if (Bin.length === 1) { break; }
+      }
+    }
     return Bin;
   }
   constructor() { }
