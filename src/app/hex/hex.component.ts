@@ -11,20 +11,20 @@ export class HexComponent implements DoCheck, OnInit {
   globalChange = false;
   Validate: boolean = true;
 
-  @Input() Count: string;
-  @Output() CountChange: EventEmitter<string> = new EventEmitter<string>();
+  @Input() Number: string;
+  @Output() NumberChange: EventEmitter<string> = new EventEmitter<string>();
   ngDoCheck() {
-    if (this.Count !== this.HexToBin(this.Value)) {
-    this.Value = this.BinToHex(this.Count);
+    if (this.Number !== this.HexToBin(this.Value)) {
+    this.Value = this.BinToHex(this.Number);
     }
   }
-  ClickModel() {
+  ClickInput() {
     this.globalChange = false;
   }
   ModelChange() {
     this.Validate = this.ValidateNumber(this.Value);
     if (this.Validate) {
-    this.CountChange.emit(this.HexToBin(this.Value));
+    this.NumberChange.emit(this.HexToBin(this.Value));
     }
   }
   ValidateNumber(numberString: string): boolean {

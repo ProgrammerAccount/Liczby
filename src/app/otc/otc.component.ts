@@ -11,24 +11,24 @@ export class OtcComponent implements OnInit, DoCheck {
   Value: string = '';
   globalChange: boolean = false;
 
-  @Input() Count: string;
-  @Output() CountChange: EventEmitter<string> = new EventEmitter<string>();
+  @Input() Number: string;
+  @Output() NumberChange: EventEmitter<string> = new EventEmitter<string>();
   ngDoCheck() {
-    if (this.Count !== this.OctToBin(this.Value)) {
-    this.Value = this.BinToOct(this.Count);
+    if (this.Number !== this.OctToBin(this.Value)) {
+    this.Value = this.BinToOct(this.Number);
     }
   }
   ValidateNumber(numberString: string): boolean {
     const reg =  /^[-+]?[0-7]*\.?[0-7]*$/;
     return reg.test(numberString);
   }
-  ClickModel() {
+  ClickInput() {
     this.globalChange = false;
   }
   ModelChange() {
     this.Validate = this.ValidateNumber(this.Value);
     if (this.Validate) {
-    this.CountChange.emit(this.OctToBin(this.Value));
+    this.NumberChange.emit(this.OctToBin(this.Value));
     }
   }
   BinToOct(Bin: string): string {

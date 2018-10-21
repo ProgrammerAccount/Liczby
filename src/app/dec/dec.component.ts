@@ -11,20 +11,20 @@ export class DecComponent implements OnInit, DoCheck {
   globalChange: boolean = false;
   Validate: boolean = true;
 
-  @Input() Count: string;
-  @Output() CountChange: EventEmitter<string> = new EventEmitter<string>();
+  @Input() Number: string;
+  @Output() NumberChange: EventEmitter<string> = new EventEmitter<string>();
   ngDoCheck() {
-    if (this.Count !== this.DecToBin(this.Value)) {
-    this.Value = this.BinToDec(this.Count);
+    if (this.Number !== this.DecToBin(this.Value)) {
+    this.Value = this.BinToDec(this.Number);
     }
   }
-  ClickModel() {
+  ClickInput() {
     this.globalChange = false;
   }
   ModelChange() {
     this.Validate = this.ValidateNumber(this.Value.toString());
     if (this.Validate) {
-    this.CountChange.emit(this.DecToBin( this.Value ));
+    this.NumberChange.emit(this.DecToBin( this.Value ));
     }
   }
   ValidateNumber(numberString: string): boolean {

@@ -10,15 +10,15 @@ export class BinComponent implements OnInit , DoCheck {
   globalChange: boolean = false;
   Value: string;
   Validate: boolean = true;
-  @Input() Count: string;
-  @Output() CountChange: EventEmitter<string> = new EventEmitter<string>();
+  @Input() Number: string;
+  @Output() NumberChange: EventEmitter<string> = new EventEmitter<string>();
   ngDoCheck() {
     this.globalChange = true;
-    if (this.Count !== this.Value) {
-      this.Value = this.Count;
+    if (this.Number !== this.Value) {
+      this.Value = this.Number;
     }
   }
-  ClickModel() {
+  ClickInput() {
     this.globalChange = false;
   }
   ValidateNumber(numberString: string): boolean {
@@ -29,7 +29,7 @@ export class BinComponent implements OnInit , DoCheck {
 
     this.Validate = this.ValidateNumber(this.Value);
     if (this.Validate) {
-    this.CountChange.emit(this.Value);
+    this.NumberChange.emit(this.Value);
     }
 
 }

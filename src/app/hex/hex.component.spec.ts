@@ -34,6 +34,9 @@ describe('HexComponent', () => {
   it('Hex convert to Bin', () => {
     expect(component.HexToBin('F0F')).toBe('111100001111');
   });
+  it('Hex convert to Bin', () => {
+    expect(component.HexToBin('F0')).toBe('11110000');
+  });
   it('syntax Validation', () => {
     expect(component.ValidateNumber('FF')).toBe(true);
   });
